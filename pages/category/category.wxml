@@ -1,0 +1,28 @@
+<!--pages/category/category.wxml-->
+<view>
+  <view class='search'>
+    <image src="../../images/search.png"></image>
+    <text>商品搜索，共有22个物品</text>
+  </view>
+  <!-- 左边导航 -->
+  <view class='nav'>
+   <scroll-view>
+    <view wx:for='{{navlist}}' wx:key='{{index}}' class='item {{currentindex===index?"active":""}}' bindtap='showCurrent' data-index='{{index}}'>
+      {{item.name}}
+    </view>
+   </scroll-view>
+  </view>
+  <view class='nav-right'>
+    <image src='{{navlist[currentindex].bz_2}}'></image>
+    <text>{{navlist[currentindex].concent}}</text>
+    <view class='tips'>
+      --{{navlist[currentindex].name}}分类--
+    </view>
+    <view class='info'>
+      <view class='item' wx:for='{{navlistdetail}}' wx:key='{{index}}'>
+        <image src='{{item.bz_1}}'></image>
+        <view class='name'>{{item.name}}</view>
+      </view>     
+    </view>
+  </view>
+</view>

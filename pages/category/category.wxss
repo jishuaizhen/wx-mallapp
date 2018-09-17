@@ -1,0 +1,85 @@
+/* pages/category/category.wxss */
+.search {
+  height: 60rpx;
+  background: #EDEDED;
+  width: 90%;
+  margin:10rpx auto;
+  border-radius: 10rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.search image {
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 20rpx;
+}
+.search text {
+  font-size: 28rpx;
+  color: #666;
+}
+/* 导航 */
+.nav{
+  width: 25%;
+  height: 990rpx;
+  position: absolute;
+  left: 0;
+  top:80rpx;
+  overflow: auto;
+  font-size:32rpx;
+}
+.nav scroll-view{
+  height: auto;
+}
+.nav .item{
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+}
+.active{
+  font-size: 36rpx;
+  color: #e9232c;
+  border-left: 1px solid #e9232c;
+}
+.nav-right{
+  width: 100%;
+  height: 100%;
+  padding-left: 220rpx;
+  box-sizing: border-box;
+}
+.nav-right image{
+  position: relative;
+  width: 65%;
+  height: 200rpx;
+  right: 0;
+  top:20rpx;
+}
+.nav-right text{
+  color: white;
+  position: absolute;
+  right: 140rpx;
+  top:180rpx;
+  font-size: 32rpx;
+}
+.nav-right .tips{
+  font-size: 32rpx;
+  margin: 40rpx 150rpx;
+}
+.nav-right .info{
+  width: 100%;
+  height: 400rpx;
+  display: flex;
+}
+.nav-right .info .item{
+  width:25%;
+  height:130rpx;
+}
+.nav-right .info image{
+  width: 60%;
+  height: 100rpx;
+}
+.nav-right .info .name{
+  width:100%;
+  height:28rpx;
+}

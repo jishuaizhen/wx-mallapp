@@ -1,0 +1,9 @@
+<!--pages/unique/unique.wxml-->
+<view class='unique'>
+  <view wx:for='{{topiclist}}' wx:key='{{index}}' class='item'>
+    <image src='{{item.photo}}'></image>
+    <text>{{item.name}}</text>
+    <text>{{item.subtitle}}</text>
+    <text>￥{{item.price_info}}</text>
+  </view>
+</view>

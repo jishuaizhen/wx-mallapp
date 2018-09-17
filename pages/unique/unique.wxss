@@ -1,0 +1,15 @@
+/* pages/unique/unique.wxss */
+.item{
+  width: 100%;
+  display: flex;
+  flex-direction:column;
+  align-items: center;
+}
+.item image{
+  width:100%;
+  height: 400rpx;
+}
+.item text{
+  font-size:32rpx;
+  padding: 20rpx 0;
+}

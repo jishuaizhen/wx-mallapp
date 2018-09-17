@@ -1,0 +1,89 @@
+<!--pages/home/home.wxml-->
+<import src='../template/ad.wxml' />
+<view class='container'>
+  <!-- 搜索框 -->
+  <view class='search'>
+    <image src="../../images/search.png"></image>
+    <text>商品搜索，共有22个物品</text>
+  </view>
+  <!-- 轮播图 -->
+  <view class='case'>
+    <swiper indicator-dots='true'>
+      <swiper-item wx:for="{{topSliders}}" wx:key="{{index}}">
+        <image src="{{item.photo}}"></image>
+      </swiper-item>
+    </swiper>
+  </view>
+  <!-- 导航分类 -->
+  <view class='category'>
+    <view wx:for="{{categorylist}}" wx:key="{{index}}">
+      <image src='{{item.bz_1}}'></image>
+      <text>{{item.name}}</text>
+    </view>
+  </view>
+  <!-- 广告 -->
+  <template is='ad' data='{{brand:imglist[0]}}'></template>
+  <!-- 品牌直供 -->
+  <view class='product'>
+    <view class='title'>品牌直供</view>
+    <view class='prolist'>
+      <view class='pro' wx:for='{{brandlist}}' wx:key='{{index}}' style="background-image: url({{item.photo}})">
+        <text class='zz'>{{item.name}}</text>
+        <text class='price'>{{item.brandprice}}元起</text>
+      </view>
+    </view>
+  </view>
+  <template is='ad' data='{{brand:imglist[1]}}'></template>
+  <!-- 新品首发 -->
+  <view class='new'>
+    <view class='title'>周一到周四·新品首发</view>
+    <view class='prolist'>
+      <view class='pro1' wx:for='{{newlist}}' wx:key='{{index}}'>
+        <navigator url='/pages/detail/detail?id={{item.id}}' class='navigator'>
+        <image src='{{item.photo_x}}'></image>
+        <view>
+          <text class='name'>{{item.name}}</text>
+          <text class='price'>￥{{item.price_yh}}</text>
+        </view>
+        </navigator>
+      </view>
+    </view>
+  </view>
+  <template is='ad' data='{{brand:imglist[0]}}'></template>
+  <!-- 更多好物 -->
+  <view class='more'>
+    <view class='title'>更多好物</view>
+    <view class='prolist'>
+      <view class='pro1' wx:for='{{newlist}}' wx:key='{{index}}'>
+        <image src='{{item.photo_x}}'></image>
+        <view>
+          <text class='name'>{{item.name}}</text>
+          <text class='price'>￥{{item.price_yh}}</text>
+        </view>
+      </view>
+      <view class='pro1' wx:for='{{prolist}}' wx:key='{{index}}'>
+        <image src='{{item.photo_x}}'></image>
+        <view>
+          <text class='name'>{{item.name}}</text>
+          <text class='price'>￥{{item.price_yh}}</text>
+        </view>
+      </view>
+      
+      <view class='item-more' bindtap='getmore'>
+        <text>更多好物</text>
+        <icon type='success'></icon>
+      </view>
+    </view>
+  </view>
+  <!-- 弹出登录层 -->
+  <view class='login' wx:if='{{isShow}}'>
+    <view class='top'>
+      <view class='title'>登录</view>
+      <view class='content'>请先登录</view>
+    </view>
+    <view class='bottom'>
+      <button class='cancel'>取消</button>
+      <button class='confirm' open-type='getUserInfo' lang='zh_CN' bindgetuserinfo='onGotUserInfo'>登录</button>
+    </view>
+  </view>
+</view>

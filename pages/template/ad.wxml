@@ -1,0 +1,5 @@
+<template name='ad'>
+  <view class='ad'>
+    <image src='{{brand}}'></image>
+  </view>
+</template>

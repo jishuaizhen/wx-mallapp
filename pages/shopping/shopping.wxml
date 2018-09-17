@@ -1,0 +1,32 @@
+<!--pages/shopping/shopping.wxml-->
+<view class='shopping'>
+  <!-- 头部 -->
+  <view class='top'>
+    <view><icon type='info' size='8' color='red'/>30天无忧退货</view>
+    <view><icon type='info' size='8' color='red'/>48小时快速退款</view>
+    <view><icon type='info' size='8' color='red'/>满88元免邮费</view>
+  </view>
+  <!-- 内容 -->
+  <view class='shop' wx:for="{{shoplist}}" wx:key="{{index}}">
+    <view class='select'><icon class='{{item.selected?"active":""}}' bindtap='changeSelected' data-index="{{index}}"></icon></view>
+    <image src='{{item.photo_x}}'></image>
+    <view class='info'>
+      <view class='text1'>{{item.pro_name}}</view>
+      <view class='text2'>已选择</view>
+      <view class='text3'>￥{{item.price}}</view>
+    </view>
+    <view class='num'>
+      <view class='icon'><icon type='cancel' size='16' color='black' bindtap='clearCart' data-index='{{index}}'/></view>
+      <view class='btn'>
+        <view bindtap='upCart' data-index='{{index}}'>+</view>
+        <input class='input' value="{{item.num}}"/>
+        <view bindtap='downCart' data-index='{{index}}'>-</view>
+      </view>
+    </view>
+  </view>
+  <!-- 底部 -->
+  <view class='footer'>
+    <view class='select'><icon class='{{selectAllStatus?"active":""}}' bindtap='changeAllSelected'></icon>全选</view>
+    <view class='order' bindtap='nowBuy'>下单</view>
+  </view>
+</view> 
